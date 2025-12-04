@@ -171,3 +171,75 @@
 .form-textarea:valid:not(:placeholder-shown) {
     border-color: var(--color-primary);
 }
+
+/* ==========================================================================
+   Custom Error States (JavaScript-controlled)
+   ========================================================================== */
+.form-input--error,
+.form-input--error:focus {
+    border-color: #EF4444;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+}
+
+.form-error {
+    color: #EF4444;
+    font-size: 0.8125rem;
+    margin-top: var(--space-1);
+}
+
+/* ==========================================================================
+   Form Messages (Success/Error Notifications)
+   ========================================================================== */
+.form-message {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-4);
+    padding: var(--space-6);
+    border-radius: var(--radius-xl);
+    margin-bottom: var(--space-8);
+}
+
+.form-message--success {
+    background-color: #ECFDF5;
+    border: 1px solid #10B981;
+    color: #065F46;
+}
+
+.form-message--error {
+    background-color: #FEF2F2;
+    border: 1px solid #EF4444;
+    color: #991B1B;
+}
+
+.form-message__icon {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-top: 0.125rem;
+}
+
+.form-message--success .form-message__icon {
+    color: #10B981;
+}
+
+.form-message--error .form-message__icon {
+    color: #EF4444;
+}
+
+.form-message strong {
+    display: block;
+    margin-bottom: var(--space-1);
+}
+
+.form-message p {
+    margin: 0;
+    font-size: 0.9375rem;
+}
+
+/* ==========================================================================
+   Submit Button States
+   ========================================================================== */
+.btn--primary:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
