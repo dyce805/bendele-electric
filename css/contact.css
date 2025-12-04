@@ -89,6 +89,16 @@
     margin-bottom: var(--space-1);
 }
 
+.contact-card__info a {
+    color: var(--color-gray-700);
+    text-decoration: none;
+    transition: var(--transition-colors);
+}
+
+.contact-card__info a:hover {
+    color: var(--color-primary);
+}
+
 .contact-card__secondary {
     font-size: 0.875rem;
     color: var(--color-gray-500);
