@@ -1,0 +1,8 @@
+# Robots.txt for Bendele Electric
+# https://bendele-electric.com
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://bendele-electric.com/sitemap.xml
