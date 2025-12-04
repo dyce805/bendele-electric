@@ -167,6 +167,12 @@
                     <textarea id="additionalComments" name="additionalComments" class="form-textarea" rows="3" placeholder="Anything else you'd like us to know?"></textarea>
                 </div>
 
+                <!-- Honeypot field (hidden from real users, catches bots) -->
+                <div class="form-group" style="position: absolute; left: -9999px;" aria-hidden="true">
+                    <label for="website">Website</label>
+                    <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                </div>
+
                 <!-- Submit Button -->
                 <div class="form-group form-group--submit">
                     <button type="submit" class="btn btn--primary btn--large">Submit Quote Request</button>

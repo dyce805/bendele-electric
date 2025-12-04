@@ -48,7 +48,7 @@ Focus on SEO and clear business identity.
     - [X] Build Services Page.
     - [X] Build Get a Quote Page.
 4. [ ] **Functionality Phase**
-    - [ ] Implement Form Logic (Email sending).
+    - [X] Implement Form Logic (Email sending).
 5. [ ] **Final Polish**
     - [ ] SEO Audit.
     - [ ] Performance check.

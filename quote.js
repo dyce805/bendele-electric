@@ -186,6 +186,15 @@ document.addEventListener('DOMContentLoaded', function() {
     form.addEventListener('submit', async function(e) {
         e.preventDefault();
         
+        // Honeypot spam check - if filled, silently reject (bots fill hidden fields)
+        const honeypot = document.getElementById('website');
+        if (honeypot && honeypot.value) {
+            // Fake success to not alert the bot
+            showSuccessMessage();
+            form.reset();
+            return;
+        }
+        
         clearAllErrors();
 
         // Validate all fields
