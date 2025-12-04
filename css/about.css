@@ -1,0 +1,277 @@
+/* ==========================================================================
+   About Page Styles
+   ========================================================================== */
+
+/* ==========================================================================
+   Page Header (for inner pages)
+   ========================================================================== */
+.page-header {
+    background-color: var(--color-secondary);
+    padding-top: 5rem; /* Offset for fixed navigation */
+}
+
+.page-header__container {
+    padding: var(--space-16) var(--space-6);
+    max-width: var(--max-w-7xl);
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .page-header__container {
+        padding: var(--space-20) var(--space-12);
+    }
+}
+
+.page-header__title {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: var(--space-4);
+}
+
+@media (min-width: 768px) {
+    .page-header__title {
+        font-size: 3.5rem;
+    }
+}
+
+.page-header__description {
+    font-size: 1.125rem;
+    color: var(--color-gray-300);
+    max-width: var(--max-w-2xl);
+}
+
+/* ==========================================================================
+   About Section (Our Story)
+   ========================================================================== */
+.about-section {
+    padding: var(--space-24) var(--space-6);
+    background-color: white;
+}
+
+@media (min-width: 768px) {
+    .about-section {
+        padding: var(--space-24) var(--space-12);
+    }
+}
+
+.about-section__container {
+    max-width: var(--max-w-7xl);
+    margin: 0 auto;
+}
+
+.about-section__header {
+    margin-bottom: var(--space-12);
+}
+
+.about-section__badge {
+    display: inline-block;
+    color: var(--color-primary);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    margin-bottom: var(--space-4);
+}
+
+.about-section__title {
+    font-family: var(--font-heading);
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: var(--color-secondary);
+}
+
+@media (min-width: 768px) {
+    .about-section__title {
+        font-size: 2.25rem;
+    }
+}
+
+.about-section__content {
+    display: grid;
+    gap: var(--space-12);
+}
+
+@media (min-width: 768px) {
+    .about-section__content {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-16);
+    }
+}
+
+.about-section__text p {
+    color: var(--color-gray-500);
+    line-height: 1.75;
+    margin-bottom: var(--space-6);
+}
+
+.about-section__text p:last-child {
+    margin-bottom: 0;
+}
+
+.about-section__values {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
+/* ==========================================================================
+   Value Cards
+   ========================================================================== */
+.value-card {
+    padding: var(--space-6);
+    background-color: var(--color-gray-50);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--color-gray-100);
+}
+
+.value-card__icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    color: var(--color-primary);
+    margin-bottom: var(--space-4);
+}
+
+.value-card__icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.value-card__title {
+    font-family: var(--font-heading);
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-secondary);
+    margin-bottom: var(--space-2);
+}
+
+.value-card__description {
+    font-size: 0.875rem;
+    color: var(--color-gray-500);
+    line-height: 1.625;
+}
+
+/* ==========================================================================
+   Team Section (Meet Our Staff)
+   ========================================================================== */
+.team-section {
+    padding: var(--space-24) var(--space-6);
+    background-color: var(--color-gray-50);
+}
+
+@media (min-width: 768px) {
+    .team-section {
+        padding: var(--space-24) var(--space-12);
+    }
+}
+
+.team-section__container {
+    max-width: var(--max-w-7xl);
+    margin: 0 auto;
+}
+
+.team-section__header {
+    text-align: center;
+    margin-bottom: var(--space-16);
+}
+
+.team-section__badge {
+    display: inline-block;
+    color: var(--color-primary);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    margin-bottom: var(--space-4);
+}
+
+.team-section__title {
+    font-family: var(--font-heading);
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: var(--color-secondary);
+    margin-bottom: var(--space-4);
+}
+
+@media (min-width: 768px) {
+    .team-section__title {
+        font-size: 2.25rem;
+    }
+}
+
+.team-section__description {
+    color: var(--color-gray-500);
+    font-size: 1.125rem;
+    max-width: var(--max-w-2xl);
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   Team Grid
+   ========================================================================== */
+.team-grid {
+    display: grid;
+    gap: var(--space-8);
+}
+
+@media (min-width: 768px) {
+    .team-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ==========================================================================
+   Team Cards
+   ========================================================================== */
+.team-card {
+    background-color: white;
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-gray-100);
+    transition: var(--transition-all);
+}
+
+.team-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+}
+
+.team-card__image {
+    width: 100%;
+    height: 16rem;
+    background-color: var(--color-gray-200);
+    overflow: hidden;
+}
+
+.team-card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.team-card__info {
+    padding: var(--space-6);
+}
+
+.team-card__name {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-secondary);
+    margin-bottom: var(--space-1);
+}
+
+.team-card__role {
+    color: var(--color-primary);
+    font-weight: 600;
+    font-size: 0.875rem;
+    margin-bottom: var(--space-4);
+}
+
+.team-card__bio {
+    color: var(--color-gray-500);
+    font-size: 0.875rem;
+    line-height: 1.625;
+}
