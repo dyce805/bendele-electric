@@ -50,6 +50,6 @@ Focus on SEO and clear business identity.
 4. [ ] **Functionality Phase**
     - [X] Implement Form Logic (Email sending).
 5. [ ] **Final Polish**
-    - [ ] SEO Audit.
-    - [ ] Performance check.
+    - [X] SEO Audit.
+    - [X] Performance check.
     - [ ] Add accurate bio info and get feedback on current info
