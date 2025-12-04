@@ -368,6 +368,14 @@
         // Real-time validation on blur
         form.querySelectorAll('.form-input, .form-select, .form-textarea').forEach(field => {
             field.addEventListener('blur', function() {
+                // Mark field as touched for CSS validation styling
+                this.classList.add('touched');
+                validateField(this);
+            });
+
+            // Also mark as touched on change (for select and date inputs)
+            field.addEventListener('change', function() {
+                this.classList.add('touched');
                 validateField(this);
             });
 

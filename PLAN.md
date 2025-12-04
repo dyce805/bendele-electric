@@ -52,4 +52,4 @@ Focus on SEO and clear business identity.
 5. [ ] **Final Polish**
     - [ ] SEO Audit.
     - [ ] Performance check.
-    - [ ] Add accurate bio info and get feedback on current infox
+    - [ ] Add accurate bio info and get feedback on current info

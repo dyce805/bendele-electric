@@ -159,16 +159,17 @@
 }
 
 /* ==========================================================================
-   Form Validation States
+   Form Validation States (only applied after user interaction via .touched class)
    ========================================================================== */
-.form-input:invalid:not(:placeholder-shown),
-.form-select:invalid:not([value=""]),
-.form-textarea:invalid:not(:placeholder-shown) {
+.form-input.touched:invalid,
+.form-select.touched:invalid,
+.form-textarea.touched:invalid {
     border-color: #EF4444;
 }
 
-.form-input:valid:not(:placeholder-shown),
-.form-textarea:valid:not(:placeholder-shown) {
+.form-input.touched:valid,
+.form-select.touched:valid,
+.form-textarea.touched:valid {
     border-color: var(--color-primary);
 }
 
