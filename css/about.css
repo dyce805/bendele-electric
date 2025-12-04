@@ -46,19 +46,19 @@
    About Section (Our Story)
    ========================================================================== */
 .about-section {
-    padding: var(--space-24) var(--space-6);
     background-color: white;
-}
-
-@media (min-width: 768px) {
-    .about-section {
-        padding: var(--space-24) var(--space-12);
-    }
 }
 
 .about-section__container {
     max-width: var(--max-w-7xl);
     margin: 0 auto;
+    padding: var(--space-24) var(--space-6);
+}
+
+@media (min-width: 768px) {
+    .about-section__container {
+        padding: var(--space-24) var(--space-12);
+    }
 }
 
 .about-section__header {
@@ -156,19 +156,19 @@
    Team Section (Meet Our Staff)
    ========================================================================== */
 .team-section {
-    padding: var(--space-24) var(--space-6);
     background-color: var(--color-gray-50);
-}
-
-@media (min-width: 768px) {
-    .team-section {
-        padding: var(--space-24) var(--space-12);
-    }
 }
 
 .team-section__container {
     max-width: var(--max-w-7xl);
     margin: 0 auto;
+    padding: var(--space-24) var(--space-6);
+}
+
+@media (min-width: 768px) {
+    .team-section__container {
+        padding: var(--space-24) var(--space-12);
+    }
 }
 
 .team-section__header {
