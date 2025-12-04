@@ -14,6 +14,7 @@ Focus on SEO and clear business identity.
 - **Core**: HTML5, CSS3
 - **Styling**: Tailwind CSS (For modern/sleek look)
 - **Scripting**: Vanilla JavaScript
+- **Form Handling**: EmailJS
 
 ## Design System
 - **Color Palette**:
@@ -26,15 +27,15 @@ Focus on SEO and clear business identity.
     - **Body**: Lato (Legible, friendly sans-serif)
 
 ## Functional Requirements
-- **Quote Form**: Must send structured email to admin.
+- **Quote Form**: Must send structured email to admin via EmailJS.
 - **SEO**: Semantic HTML, meta tags, fast loading.
 - **Responsive**: Mobile-first design.
 
 ## Roadmap
 1. [ ] **Setup & Design Phase**
-    - [ ] Define color palette and typography.
-    - [ ] Create `PLAN.md`.
-    - [ ] Clarify form handling strategy.
+    - [X] Define color palette and typography.
+    - [X] Create `PLAN.md`.
+    - [X] Clarify form handling strategy.
 2. [ ] **Mockup Phase**
     - [ ] Create Wireframe/Mockup for Home Page.
     - [ ] Create Wireframe/Mockup for Quote Page.
