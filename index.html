@@ -3,217 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bendele Electric - Hybrid Design</title>
+    <title>Bendele Electric</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#438548', // Professional Green
-                        primaryHover: '#366A3A', // Darker Green
-                        secondary: '#1F2937', // Charcoal/Slate
-                        bgLight: '#F3F4F6', // Light Gray
-                    },
-                    fontFamily: {
-                        body: ['Lato', 'sans-serif'],
-                        heading: ['Poppins', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body { font-family: 'Lato', sans-serif; }
-        h1, h2, h3, h4, h5, h6 { font-family: 'Poppins', sans-serif; }
-    </style>
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="text-secondary bg-white antialiased selection:bg-primary selection:text-white">
+<body>
 
-    <!-- Navigation: Hybrid (Modern Spacing + Logo Image) -->
-    <nav class="py-6 px-6 md:px-12 max-w-7xl mx-auto flex justify-between items-center border-b border-gray-100">
-        <!-- Logo: Image from index.html -->
-        <a href="#" class="flex-shrink-0 flex items-center gap-2">
-            <img class="h-12 w-auto" src="../assets/bendele-electric-logo.png" alt="Bendele Electric Logo" onerror="this.src='https://placehold.co/200x80?text=Bendele+Electric';">
+    <!-- Navigation -->
+    <nav class="nav">
+        <!-- Logo -->
+        <a href="#" class="nav__logo">
+            <img class="nav__logo-img" src="assets/bendele-electric-logo.png" alt="Bendele Electric Logo" onerror="this.src='https://placehold.co/200x80?text=Bendele+Electric';">
         </a>
         
-        <!-- Desktop Menu: Modern Style -->
-        <div class="hidden md:flex items-center gap-10 text-sm font-medium text-gray-500">
-            <a href="#" class="hover:text-secondary transition-colors">Services</a>
-            <a href="#" class="hover:text-secondary transition-colors">About</a>
-            <a href="#" class="hover:text-secondary transition-colors">Contact</a>
-            <a href="quote.html" class="px-6 py-2.5 bg-secondary text-white rounded-full hover:bg-gray-800 transition-all transform hover:-translate-y-0.5 shadow-md">
-                Get a Quote
-            </a>
+        <!-- Desktop Menu -->
+        <div class="nav__menu">
+            <a href="#services" class="nav__link">Services</a>
+            <a href="#" class="nav__link">About</a>
+            <a href="#" class="nav__link">Contact</a>
+            <a href="quote.html" class="nav__cta">Get a Quote</a>
         </div>
 
         <!-- Mobile Menu Icon -->
-        <button class="md:hidden text-secondary">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        <button class="nav__mobile-toggle">
+            <svg class="nav__mobile-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
         </button>
     </nav>
 
-    <!-- Hero Section: Modern Layout (Left Aligned) + Large Typography -->
-    <section class="px-6 md:px-12 py-20 md:py-32 max-w-7xl mx-auto border-b border-gray-100">
-        <div class="max-w-4xl">
-            <span class="text-primary font-bold tracking-widest uppercase text-xs mb-6 block">Licensed & Insured</span>
-            <h1 class="font-heading text-5xl md:text-7xl font-bold text-secondary mb-8 leading-[1.1]">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero__content">
+            <span class="hero__badge">Licensed & Insured</span>
+            <h1 class="hero__title">
                 Electrical excellence <br>
-                <span class="text-gray-300">for modern spaces.</span>
+                <span class="hero__title-accent">for modern spaces.</span>
             </h1>
-            <p class="text-xl text-gray-500 mb-12 max-w-xl font-light leading-relaxed">
+            <p class="hero__description">
                 We provide precision electrical solutions for homes and businesses. Safe, reliable, and always professional.
             </p>
-            <div class="flex flex-col sm:flex-row gap-5">
-                <a href="quote.html" class="px-8 py-4 bg-primary text-white rounded-full font-medium hover:bg-primaryHover transition-colors text-center shadow-lg">
-                    Start a Project
-                </a>
-                <a href="#services" class="px-8 py-4 border border-gray-200 text-secondary rounded-full font-medium hover:border-gray-400 transition-colors text-center">
-                    Explore Services
-                </a>
+            <div class="hero__actions">
+                <a href="quote.html" class="btn btn--primary">Start a Project</a>
+                <a href="#services" class="btn btn--outline">Explore Services</a>
             </div>
         </div>
     </section>
 
-    <!-- Stats / Trust: Modern Spacing + Index Borders -->
-    <section class="bg-gray-50/50 border-b border-gray-100">
-        <div class="max-w-7xl mx-auto px-6 md:px-12 py-12 grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div class="border-r border-gray-200 last:border-0 pr-4">
-                <div class="text-3xl font-bold text-secondary font-heading">15+</div>
-                <div class="text-sm text-gray-500 mt-1">Years Experience</div>
+    <!-- Stats / Trust -->
+    <section class="stats">
+        <div class="stats__grid">
+            <div class="stats__item">
+                <div class="stats__number">15+</div>
+                <div class="stats__label">Years Experience</div>
             </div>
-            <div class="border-r border-gray-200 last:border-0 pr-4">
-                <div class="text-3xl font-bold text-secondary font-heading">500+</div>
-                <div class="text-sm text-gray-500 mt-1">Projects Completed</div>
+            <div class="stats__item">
+                <div class="stats__number">500+</div>
+                <div class="stats__label">Projects Completed</div>
             </div>
-            <div class="border-r border-gray-200 last:border-0 pr-4">
-                <div class="text-3xl font-bold text-secondary font-heading">24/7</div>
-                <div class="text-sm text-gray-500 mt-1">Emergency Support</div>
+            <div class="stats__item">
+                <div class="stats__number">24/7</div>
+                <div class="stats__label">Emergency Support</div>
             </div>
-            <div>
-                <div class="text-3xl font-bold text-secondary font-heading">100%</div>
-                <div class="text-sm text-gray-500 mt-1">Satisfaction Rate</div>
+            <div class="stats__item">
+                <div class="stats__number">100%</div>
+                <div class="stats__label">Satisfaction Rate</div>
             </div>
         </div>
     </section>
 
-    <!-- Services: Modern Grid + Index Card Borders -->
-    <section id="services" class="px-6 md:px-12 py-24 max-w-7xl mx-auto">
-        <div class="flex flex-col md:flex-row justify-between items-end mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-secondary font-heading">Our Expertise</h2>
-            <a href="#" class="hidden md:inline-flex items-center text-primary font-medium hover:text-primaryHover mt-4 md:mt-0">
-                View all services <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+    <!-- Services -->
+    <section id="services" class="services">
+        <div class="services__header">
+            <h2 class="services__title">Our Expertise</h2>
+            <a href="#" class="services__view-all">
+                View all services <svg class="services__view-all-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
             </a>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-x-8 gap-y-12">
-            <!-- Card 1: Hybrid Style (Bordered Card + Modern Roundedness) -->
-            <div class="group cursor-pointer border border-gray-200 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 bg-white">
-                <div class="h-48 bg-gray-100 rounded-xl mb-6 overflow-hidden relative">
-                    <!-- Placeholder for image -->
-                    <div class="absolute inset-0 bg-gray-200 group-hover:bg-gray-300 transition-colors duration-500"></div>
-                    <div class="absolute bottom-4 left-4 bg-white p-3 rounded-lg shadow-sm">
-                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+        <div class="services__grid">
+            <!-- Card 1 -->
+            <div class="card">
+                <div class="card__image">
+                    <div class="card__image-overlay"></div>
+                    <div class="card__icon-wrapper">
+                        <svg class="card__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
                     </div>
                 </div>
-                <h3 class="text-xl font-bold text-secondary mb-2 group-hover:text-primary transition-colors">Residential Wiring</h3>
-                <p class="text-gray-500 leading-relaxed text-sm mb-4">Complete electrical installations, renovations, and smart home upgrades tailored for modern living.</p>
-                <span class="text-primary text-sm font-bold flex items-center">Learn More <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></span>
+                <h3 class="card__title">Residential Wiring</h3>
+                <p class="card__description">Complete electrical installations, renovations, and smart home upgrades tailored for modern living.</p>
+                <span class="card__link">Learn More <svg class="card__link-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></span>
             </div>
 
             <!-- Card 2 -->
-            <div class="group cursor-pointer border border-gray-200 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 bg-white">
-                <div class="h-48 bg-gray-100 rounded-xl mb-6 overflow-hidden relative">
-                    <!-- Placeholder for image -->
-                    <div class="absolute inset-0 bg-gray-200 group-hover:bg-gray-300 transition-colors duration-500"></div>
-                    <div class="absolute bottom-4 left-4 bg-white p-3 rounded-lg shadow-sm">
-                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+            <div class="card">
+                <div class="card__image">
+                    <div class="card__image-overlay"></div>
+                    <div class="card__icon-wrapper">
+                        <svg class="card__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
                     </div>
                 </div>
-                <h3 class="text-xl font-bold text-secondary mb-2 group-hover:text-primary transition-colors">Commercial Systems</h3>
-                <p class="text-gray-500 leading-relaxed text-sm mb-4">Scalable power solutions, lighting design, and maintenance for offices and retail spaces.</p>
-                <span class="text-primary text-sm font-bold flex items-center">Learn More <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></span>
+                <h3 class="card__title">Commercial Systems</h3>
+                <p class="card__description">Scalable power solutions, lighting design, and maintenance for offices and retail spaces.</p>
+                <span class="card__link">Learn More <svg class="card__link-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></span>
             </div>
 
             <!-- Card 3 -->
-            <div class="group cursor-pointer border border-gray-200 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 bg-white">
-                <div class="h-48 bg-gray-100 rounded-xl mb-6 overflow-hidden relative">
-                    <!-- Placeholder for image -->
-                    <div class="absolute inset-0 bg-gray-200 group-hover:bg-gray-300 transition-colors duration-500"></div>
-                    <div class="absolute bottom-4 left-4 bg-white p-3 rounded-lg shadow-sm">
-                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+            <div class="card">
+                <div class="card__image">
+                    <div class="card__image-overlay"></div>
+                    <div class="card__icon-wrapper">
+                        <svg class="card__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                     </div>
                 </div>
-                <h3 class="text-xl font-bold text-secondary mb-2 group-hover:text-primary transition-colors">Emergency Repair</h3>
-                <p class="text-gray-500 leading-relaxed text-sm mb-4">Rapid response diagnostics and repair to get your power back on when it matters most.</p>
-                <span class="text-primary text-sm font-bold flex items-center">Learn More <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></span>
+                <h3 class="card__title">Emergency Repair</h3>
+                <p class="card__description">Rapid response diagnostics and repair to get your power back on when it matters most.</p>
+                <span class="card__link">Learn More <svg class="card__link-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></span>
             </div>
         </div>
     </section>
 
-    <!-- CTA: Modern Layout -->
-    <section class="bg-secondary text-white py-24 px-6 md:px-12">
-        <div class="max-w-4xl mx-auto text-left">
-            <h2 class="text-3xl md:text-5xl font-bold font-heading mb-8">Let's light up your project.</h2>
-            <p class="text-gray-400 text-lg mb-10 max-w-2xl">Get a transparent, detailed quote for your electrical needs today. No hidden fees, just quality work.</p>
-            <a href="quote.html" class="inline-block px-10 py-4 bg-primary text-white rounded-full font-bold hover:bg-white hover:text-secondary transition-all duration-300 shadow-lg">
-                Request Quote
-            </a>
+    <!-- CTA -->
+    <section class="cta">
+        <div class="cta__content">
+            <h2 class="cta__title">Let's light up your project.</h2>
+            <p class="cta__description">Get a transparent, detailed quote for your electrical needs today. No hidden fees, just quality work.</p>
+            <a href="quote.html" class="cta__btn">Request Quote</a>
         </div>
     </section>
 
-    <!-- Footer: Modern Minimalist -->
-    <footer class="bg-white pt-16 pb-8 px-6 md:px-12 border-t border-gray-100">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12 mb-12">
-            <div class="max-w-xs">
-                <a href="#" class="flex-shrink-0 flex items-center gap-2 mb-4">
-                    <img class="h-8 w-auto" src="../assets/bendele-electric-logo.png" alt="Bendele Electric Logo" onerror="this.src='https://placehold.co/200x80?text=Bendele+Electric';">
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__main">
+            <div class="footer__brand">
+                <a href="#" class="footer__logo">
+                    <img class="footer__logo-img" src="assets/bendele-electric-logo.png" alt="Bendele Electric Logo" onerror="this.src='https://placehold.co/200x80?text=Bendele+Electric';">
                 </a>
-                <p class="text-gray-500 text-sm leading-relaxed">
+                <p class="footer__description">
                     Professional electrical services committed to safety, quality, and innovation.
                 </p>
             </div>
             
-            <div class="flex gap-12 md:gap-24 flex-wrap">
+            <div class="footer__links">
                 <div>
-                    <h4 class="font-bold text-secondary mb-4 text-sm uppercase tracking-wider">Company</h4>
-                    <ul class="space-y-3 text-sm text-gray-500">
-                        <li><a href="#" class="hover:text-primary transition">About</a></li>
-                        <li><a href="#" class="hover:text-primary transition">Careers</a></li>
-                        <li><a href="#" class="hover:text-primary transition">Contact</a></li>
+                    <h4 class="footer__column-title">Company</h4>
+                    <ul class="footer__list">
+                        <li><a href="#" class="footer__link">About</a></li>
+                        <li><a href="#" class="footer__link">Careers</a></li>
+                        <li><a href="#" class="footer__link">Contact</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-bold text-secondary mb-4 text-sm uppercase tracking-wider">Services</h4>
-                    <ul class="space-y-3 text-sm text-gray-500">
-                        <li><a href="#" class="hover:text-primary transition">Residential</a></li>
-                        <li><a href="#" class="hover:text-primary transition">Commercial</a></li>
-                        <li><a href="#" class="hover:text-primary transition">Emergency</a></li>
+                    <h4 class="footer__column-title">Services</h4>
+                    <ul class="footer__list">
+                        <li><a href="#" class="footer__link">Residential</a></li>
+                        <li><a href="#" class="footer__link">Commercial</a></li>
+                        <li><a href="#" class="footer__link">Emergency</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-bold text-secondary mb-4 text-sm uppercase tracking-wider">Connect</h4>
-                    <ul class="space-y-3 text-sm text-gray-500">
-                        <li><a href="#" class="hover:text-primary transition">Instagram</a></li>
-                        <li><a href="#" class="hover:text-primary transition">LinkedIn</a></li>
-                        <li><a href="#" class="hover:text-primary transition">Facebook</a></li>
+                    <h4 class="footer__column-title">Connect</h4>
+                    <ul class="footer__list">
+                        <li><a href="#" class="footer__link">Instagram</a></li>
+                        <li><a href="#" class="footer__link">LinkedIn</a></li>
+                        <li><a href="#" class="footer__link">Facebook</a></li>
                     </ul>
                 </div>
             </div>
         </div>
         
-        <div class="max-w-7xl mx-auto pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-400">
+        <div class="footer__bottom">
             <p>&copy; 2025 Bendele Electric. All rights reserved.</p>
-            <div class="flex gap-6">
-                <a href="#" class="hover:text-secondary">Privacy Policy</a>
-                <a href="#" class="hover:text-secondary">Terms of Service</a>
+            <div class="footer__legal">
+                <a href="#" class="footer__legal-link">Privacy Policy</a>
+                <a href="#" class="footer__legal-link">Terms of Service</a>
             </div>
         </div>
     </footer>

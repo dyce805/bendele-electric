@@ -37,7 +37,7 @@ Focus on SEO and clear business identity.
     - [X] Create `PLAN.md`.
     - [X] Clarify form handling strategy.
 2. [ ] **Mockup Phase**
-    - [ ] Create Wireframe/Mockup for Home Page.
+    - [X] Create Wireframe/Mockup for Home Page.
     - [ ] Create Wireframe/Mockup for Quote Page.
 3. [ ] **Development Phase**
     - [ ] Setup project structure.
