@@ -133,13 +133,27 @@ ul {
    Navigation
    ========================================================================== */
 .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: white;
     padding: var(--space-6);
-    max-width: var(--max-w-7xl);
-    margin: 0 auto;
+    max-width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid var(--color-gray-100);
+}
+
+.nav__inner {
+    max-width: var(--max-w-7xl);
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 @media (min-width: 768px) {
@@ -220,6 +234,7 @@ ul {
 .hero {
     background-color: var(--color-secondary);
     border-bottom: 1px solid var(--color-gray-100);
+    padding-top: 5rem; /* Offset for fixed navigation */
 }
 
 .hero__container {
@@ -240,7 +255,7 @@ ul {
 
 .hero__badge {
     display: block;
-    color: var(--color-primary);
+    color: white;
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -337,7 +352,7 @@ ul {
 
 @media (min-width: 768px) {
     .stats__grid {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         padding: var(--space-12);
     }
 }
@@ -345,16 +360,25 @@ ul {
 .stats__item {
     border-right: 1px solid var(--color-gray-200);
     padding-right: var(--space-4);
+    text-align: center;
 }
 
 .stats__item:last-child {
     border-right: none;
 }
 
-/* Hide border on 2nd item on mobile (end of first row) */
+/* On mobile (2 columns), hide border on 2nd item (end of first row) */
 @media (max-width: 767px) {
     .stats__item:nth-child(2) {
         border-right: none;
+    }
+    
+    /* Center the 3rd item when it's alone on the second row */
+    .stats__item:nth-child(3) {
+        grid-column: 1 / -1;
+        justify-self: center;
+        border-right: none;
+        padding-right: 0;
     }
 }
 
