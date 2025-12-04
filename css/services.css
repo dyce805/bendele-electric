@@ -51,14 +51,21 @@
 /* ==========================================================================
    Service Detail Text
    ========================================================================== */
+.service-detail__header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    margin-bottom: var(--space-4);
+}
+
 .service-detail__icon {
-    width: 3.5rem;
-    height: 3.5rem;
+    flex-shrink: 0;
+    width: 3rem;
+    height: 3rem;
     padding: var(--space-2);
     background-color: var(--color-primary);
     color: white;
     border-radius: var(--radius-xl);
-    margin-bottom: var(--space-4);
 }
 
 .service-detail__icon svg {
@@ -66,22 +73,12 @@
     height: 100%;
 }
 
-.service-detail__badge {
-    display: inline-block;
-    color: var(--color-primary);
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    font-size: 0.75rem;
-    margin-bottom: var(--space-2);
-}
-
 .service-detail__title {
     font-family: var(--font-heading);
     font-size: 2rem;
     font-weight: 700;
     color: var(--color-secondary);
-    margin-bottom: var(--space-4);
+    margin: 0;
 }
 
 @media (min-width: 768px) {
