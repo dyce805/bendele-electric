@@ -674,6 +674,7 @@ ul {
 .footer__logo-img {
     height: 2rem;
     width: auto;
+    transform: translateX(-10px);
 }
 
 .footer__description {
