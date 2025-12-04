@@ -44,7 +44,8 @@ Focus on SEO and clear business identity.
     - [X] Implement Global Layout (Header/Footer).
     - [X] Build Home Page.
     - [X] Build About Page.
-    - [ ] Build Contact Us Page.
+    - [X] Build Contact Us Page.
+    - [X] Build Services Page.
     - [ ] Build Get a Quote Page.
 4. [ ] **Functionality Phase**
     - [ ] Implement Form Logic (Email sending).
