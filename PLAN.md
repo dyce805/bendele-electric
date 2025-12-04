@@ -40,10 +40,10 @@ Focus on SEO and clear business identity.
     - [X] Create Wireframe/Mockup for Home Page.
     - [ ] Create Wireframe/Mockup for Quote Page.
 3. [ ] **Development Phase**
-    - [ ] Setup project structure.
-    - [ ] Implement Global Layout (Header/Footer).
-    - [ ] Build Home Page.
-    - [ ] Build About Page.
+    - [X] Setup project structure.
+    - [X] Implement Global Layout (Header/Footer).
+    - [X] Build Home Page.
+    - [X] Build About Page.
     - [ ] Build Contact Us Page.
     - [ ] Build Get a Quote Page.
 4. [ ] **Functionality Phase**
@@ -51,3 +51,4 @@ Focus on SEO and clear business identity.
 5. [ ] **Final Polish**
     - [ ] SEO Audit.
     - [ ] Performance check.
+    - [ ] Add accurate bio info and get feedback on current infox
