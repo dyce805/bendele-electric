@@ -38,7 +38,7 @@ Focus on SEO and clear business identity.
     - [X] Clarify form handling strategy.
 2. [ ] **Mockup Phase**
     - [X] Create Wireframe/Mockup for Home Page.
-    - [ ] Create Wireframe/Mockup for Quote Page.
+    - [X] Create Wireframe/Mockup for Quote Page.
 3. [ ] **Development Phase**
     - [X] Setup project structure.
     - [X] Implement Global Layout (Header/Footer).
@@ -46,7 +46,7 @@ Focus on SEO and clear business identity.
     - [X] Build About Page.
     - [X] Build Contact Us Page.
     - [X] Build Services Page.
-    - [ ] Build Get a Quote Page.
+    - [X] Build Get a Quote Page.
 4. [ ] **Functionality Phase**
     - [ ] Implement Form Logic (Email sending).
 5. [ ] **Final Polish**

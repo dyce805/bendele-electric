@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get a Quote - Bendele Electric</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/quote.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <a href="index.html" class="nav__logo">
+            <img class="nav__logo-img" src="assets/bendele-electric-logo.png" alt="Bendele Electric Logo" onerror="this.src='https://placehold.co/200x80?text=Bendele+Electric';">
+        </a>
+        
+        <div class="nav__menu">
+            <a href="services.html" class="nav__link">Services</a>
+            <a href="about.html" class="nav__link">About</a>
+            <a href="contact.html" class="nav__link">Contact</a>
+            <a href="quote.html" class="nav__cta nav__cta--active">Get a Quote</a>
+        </div>
+
+        <button class="nav__mobile-toggle">
+            <svg class="nav__mobile-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header__container">
+            <h1 class="page-header__title">Get a Quote</h1>
+            <p class="page-header__description">Tell us about your project and we'll get back to you with a free estimate.</p>
+        </div>
+    </section>
+
+    <!-- Quote Form Section -->
+    <section class="quote-section">
+        <div class="quote-section__container">
+            <form class="quote-form" id="quoteForm">
+                
+                <!-- Contact Information -->
+                <div class="form-group form-group--section">
+                    <h2 class="form-group__heading">Contact Information</h2>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Full Name <span class="form-required">*</span></label>
+                        <input type="text" id="name" name="name" class="form-input" placeholder="John Smith" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" class="form-label">Phone Number <span class="form-required">*</span></label>
+                        <input type="tel" id="phone" name="phone" class="form-input" placeholder="(555) 123-4567" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email Address <span class="form-required">*</span></label>
+                        <input type="email" id="email" name="email" class="form-input" placeholder="john@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactMethod" class="form-label">Preferred Contact Method</label>
+                        <select id="contactMethod" name="contactMethod" class="form-select">
+                            <option value="phone">Phone Call</option>
+                            <option value="email">Email</option>
+                            <option value="text">Text Message</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Property Information -->
+                <div class="form-group form-group--section">
+                    <h2 class="form-group__heading">Property Information</h2>
+                </div>
+
+                <div class="form-group">
+                    <label for="serviceAddress" class="form-label">Service Address <span class="form-required">*</span></label>
+                    <input type="text" id="serviceAddress" name="serviceAddress" class="form-input" placeholder="123 Main Street, San Antonio, TX 78201" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="propertyType" class="form-label">Property Type <span class="form-required">*</span></label>
+                        <select id="propertyType" name="propertyType" class="form-select" required>
+                            <option value="" disabled selected>Select property type</option>
+                            <option value="residential">Residential</option>
+                            <option value="commercial">Commercial</option>
+                            <option value="industrial">Industrial</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="otherPropertyGroup" style="display: none;">
+                        <label for="otherProperty" class="form-label">Please describe your property <span class="form-required">*</span></label>
+                        <input type="text" id="otherProperty" name="otherProperty" class="form-input" placeholder="e.g., Church, School, Agricultural">
+                    </div>
+                </div>
+
+                <!-- Project Details -->
+                <div class="form-group form-group--section">
+                    <h2 class="form-group__heading">Project Details</h2>
+                </div>
+
+                <div class="form-group">
+                    <label for="workType" class="form-label">Type of Work Needed <span class="form-required">*</span></label>
+                    <input type="text" id="workType" name="workType" class="form-input" placeholder="e.g., Panel upgrade, New outlet installation, Lighting repair" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="projectDescription" class="form-label">Project Description</label>
+                    <textarea id="projectDescription" name="projectDescription" class="form-textarea" rows="4" placeholder="Please provide any additional details about your project, including the scope of work, any issues you're experiencing, or specific requirements..."></textarea>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="urgency" class="form-label">Urgency Level</label>
+                        <select id="urgency" name="urgency" class="form-select">
+                            <option value="flexible">Flexible / No Rush</option>
+                            <option value="routine">Routine - Within a few weeks</option>
+                            <option value="soon">Soon - Within a week</option>
+                            <option value="urgent">Urgent - As soon as possible</option>
+                            <option value="emergency">Emergency - Immediate attention needed</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="completionDate" class="form-label">Desired Completion Date</label>
+                        <input type="date" id="completionDate" name="completionDate" class="form-input">
+                    </div>
+                </div>
+
+                <!-- Additional Information -->
+                <div class="form-group form-group--section">
+                    <h2 class="form-group__heading">Additional Information</h2>
+                </div>
+
+                <div class="form-group">
+                    <label for="howHeard" class="form-label">How did you hear about us?</label>
+                    <select id="howHeard" name="howHeard" class="form-select">
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="google">Google Search</option>
+                        <option value="referral">Friend / Family Referral</option>
+                        <option value="socialMedia">Social Media</option>
+                        <option value="driveBy">Drove by / Saw our truck</option>
+                        <option value="repeat">Returning Customer</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="additionalComments" class="form-label">Additional Comments</label>
+                    <textarea id="additionalComments" name="additionalComments" class="form-textarea" rows="3" placeholder="Anything else you'd like us to know?"></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="form-group form-group--submit">
+                    <button type="submit" class="btn btn--primary btn--large">Submit Quote Request</button>
+                    <p class="form-disclaimer">We'll respond within 72 hours with your free estimate.</p>
+                </div>
+
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__main">
+            <div class="footer__brand">
+                <a href="index.html" class="footer__logo">
+                    <img class="footer__logo-img" src="assets/bendele-electric-logo.png" alt="Bendele Electric Logo" onerror="this.src='https://placehold.co/200x80?text=Bendele+Electric';">
+                </a>
+                <p class="footer__description">
+                    Professional electrical services committed to safety, quality, and reliability.
+                </p>
+            </div>
+            
+            <div class="footer__links">
+                <div>
+                    <h4 class="footer__column-title">Company</h4>
+                    <ul class="footer__list">
+                        <li><a href="services.html" class="footer__link">Services</a></li>
+                        <li><a href="about.html" class="footer__link">About</a></li>
+                        <li><a href="contact.html" class="footer__link">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer__column-title">Services</h4>
+                    <ul class="footer__list">
+                        <li><a href="services.html#residential" class="footer__link">Residential</a></li>
+                        <li><a href="services.html#commercial" class="footer__link">Commercial</a></li>
+                        <li><a href="services.html#industrial" class="footer__link">Industrial</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer__bottom">
+            <p>&copy; 2025 Bendele Electric. All rights reserved.</p>
+            <div class="footer__legal">
+                <a href="#" class="footer__legal-link">Privacy Policy</a>
+                <a href="#" class="footer__legal-link">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Form Script -->
+    <script>
+        // Show/hide "Other" property field based on selection
+        const propertyTypeSelect = document.getElementById('propertyType');
+        const otherPropertyGroup = document.getElementById('otherPropertyGroup');
+        const otherPropertyInput = document.getElementById('otherProperty');
+
+        propertyTypeSelect.addEventListener('change', function() {
+            if (this.value === 'other') {
+                otherPropertyGroup.style.display = 'block';
+                otherPropertyInput.required = true;
+            } else {
+                otherPropertyGroup.style.display = 'none';
+                otherPropertyInput.required = false;
+                otherPropertyInput.value = '';
+            }
+        });
+
+        // Set minimum date to today for completion date
+        const completionDateInput = document.getElementById('completionDate');
+        const today = new Date().toISOString().split('T')[0];
+        completionDateInput.setAttribute('min', today);
+
+        // Form submission (placeholder - will be replaced with EmailJS)
+        document.getElementById('quoteForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your quote request! We will contact you within 72 hours.');
+            // TODO: Implement EmailJS integration
+        });
+    </script>
+
+</body>
+</html>
