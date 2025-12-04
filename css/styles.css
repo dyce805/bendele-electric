@@ -218,8 +218,15 @@ ul {
     background: none;
     border: none;
     cursor: pointer;
-    padding: var(--space-2);
+    padding: var(--space-3);
     z-index: 1001;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 @media (min-width: 768px) {
@@ -278,7 +285,17 @@ ul {
         margin-top: var(--space-4);
         text-align: center;
         border-bottom: none;
-        border-radius: var(--radius-full);
+        border-radius: var(--radius-md);
+        background-color: var(--color-primary);
+        color: white;
+        padding: var(--space-4) var(--space-6);
+        font-weight: 600;
+        box-shadow: none;
+    }
+    
+    .nav__menu .nav__cta:hover {
+        background-color: var(--color-primary-dark, #c9a227);
+        transform: none;
     }
 }
 
