@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const otherPropertyInput = document.getElementById('otherProperty');
 
     // If URL parameter exists and is valid, prefill the select
-    if (propertyTypeParam && ['residential', 'commercial', 'industrial', 'other'].includes(propertyTypeParam)) {
+    if (propertyTypeParam && ['residential', 'commercial', 'industrial', 'agricultural', 'other'].includes(propertyTypeParam)) {
         propertyTypeSelect.value = propertyTypeParam;
         // Trigger change event in case 'other' is selected
         if (propertyTypeParam === 'other') {

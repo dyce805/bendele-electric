@@ -1,0 +1,88 @@
+/* 1. Truck Door: lettered like the side of the service trucks. */
+:root {
+    --bg: #fff;
+    --ink: #141414;
+    --accent: #438548;
+    --green-dark: #2f6334;
+    --body-white: #f3f4f1;
+    --font-head: 'Marcellus', 'Optima', serif;
+    --font-body: 'Source Sans 3', system-ui, sans-serif;
+}
+
+.topbar { background: var(--accent); color: #fff; text-transform: uppercase; letter-spacing: .1em; font-weight: 600; }
+.site-header { border-bottom: 3px solid var(--ink); box-shadow: 0 5px 0 #fff, 0 6px 0 var(--accent); position: relative; }
+.nav__link { text-transform: uppercase; letter-spacing: .1em; font-size: .875rem; font-weight: 600; }
+.nav__link:hover { color: var(--green-dark); }
+.nav__cta { background: var(--accent); color: #fff; text-transform: uppercase; letter-spacing: .1em; font-size: .875rem; border-radius: 4px; }
+.nav__cta:hover { background: var(--green-dark); }
+
+/* Hero: photo first on phones, like seeing the truck pull up */
+.hero { padding-top: 0; }
+.hero__media { order: -1; margin: 0 calc(var(--side) * -1); }
+.hero__media figcaption { padding: 0 var(--side); font-style: italic; color: #555; }
+.hero__kicker { display: flex; align-items: center; gap: .75rem; font-style: italic; letter-spacing: .04em; color: var(--green-dark); font-weight: 600; }
+.hero__kicker::after { content: ""; flex: 1; border-top: 1px solid var(--accent); }
+.hero__title { margin-top: .75rem; text-transform: uppercase; letter-spacing: .03em; font-weight: 400; font-size: clamp(2.1rem, 9vw, 3.75rem); }
+.hero__title span { margin-top: .6rem; padding-top: .6rem; border-top: 2px solid var(--accent); font-size: .5em; letter-spacing: .14em; color: var(--green-dark); }
+.hero__facts { gap: 0; border-block: 1px solid var(--ink); }
+.hero__facts li { flex: 1 1 8rem; padding: .7rem .9rem .7rem 0; }
+.hero__facts li + li { padding-left: .9rem; border-left: 1px solid var(--accent); }
+
+.btn { border-radius: 4px; text-transform: uppercase; letter-spacing: .08em; font-size: .9375rem; }
+.btn--call { background: var(--ink); color: #fff; }
+.btn--call:hover { background: var(--green-dark); }
+.btn--quote { border-color: var(--ink); background: #fff; color: var(--ink); }
+.btn--quote:hover { background: var(--ink); color: #fff; }
+.btn__label { font-weight: 400; opacity: .8; }
+
+.section__num { display: none; }
+.section__title { text-transform: uppercase; letter-spacing: .05em; font-weight: 400; }
+.section__title::after { content: ""; display: block; width: 4.5rem; margin-top: .8rem; border-top: 3px solid var(--ink); box-shadow: 0 5px 0 #fff, 0 6px 0 var(--accent); }
+
+/* Services: three compartment doors on the utility body */
+.services { background: var(--body-white); }
+.service { position: relative; background: #fff; border: 2px solid var(--ink); border-radius: 10px; padding: 2rem 1.6rem 2.75rem; }
+.service::before { content: ""; position: absolute; inset: 6px; border: 1px solid var(--accent); border-radius: 5px; pointer-events: none; }
+.service::after { content: ""; position: absolute; left: 50%; bottom: 1.1rem; width: 3.25rem; height: .5rem; margin-left: -1.625rem; background: #c9ccc6; border: 1px solid #8d918a; border-radius: 99px; }
+.service__title { text-transform: uppercase; letter-spacing: .1em; font-weight: 400; text-align: center; padding-bottom: .9rem; border-bottom: 1px solid var(--ink); }
+.service__text { margin-top: .9rem; }
+.service__list li { padding-left: 1.1rem; position: relative; }
+.service__list li::before { content: ""; position: absolute; left: 0; top: .7em; width: .55rem; border-top: 2px solid var(--accent); }
+.service__link { color: var(--green-dark); }
+
+.work__item img { border: 2px solid var(--ink); border-radius: 6px; }
+.work__item figcaption { font-style: italic; color: #444; }
+
+.area { background: var(--body-white); text-align: center; }
+.area .section__title::after { margin-inline: auto; }
+.area .section__intro { margin-inline: auto; }
+.area__list { justify-content: center; gap: .4rem 0; font-family: var(--font-head); text-transform: uppercase; letter-spacing: .1em; font-size: 1.15rem; }
+.area__list li:not(:last-child)::after { content: "\25C6"; color: var(--accent); font-size: .6em; margin: 0 .9em; vertical-align: .2em; }
+
+.about__facts div { border-top: 1px solid var(--accent); padding-top: .6rem; }
+.about__media img { border: 2px solid var(--ink); border-radius: 6px; }
+
+.cta { background: var(--accent); color: #fff; }
+.cta__title { text-transform: uppercase; letter-spacing: .05em; font-weight: 400; }
+.cta__phone { letter-spacing: .04em; }
+.cta .btn--quote { background: transparent; border-color: #fff; color: #fff; }
+.cta .btn--quote:hover { background: #fff; color: var(--green-dark); }
+
+.site-footer { background: var(--ink); color: #e9e9e6; }
+.site-footer__name { text-transform: uppercase; letter-spacing: .1em; color: #fff; }
+.site-footer__legal { border-color: #444; }
+
+.callbar__call { background: var(--ink); color: #fff; }
+.callbar__quote { background: var(--accent); color: #fff; }
+
+.form-set__legend { text-transform: uppercase; letter-spacing: .08em; width: 100%; padding-bottom: .5rem; border-bottom: 2px solid var(--accent); }
+.form-input, .form-select, .form-textarea { border: 2px solid var(--ink); border-radius: 4px; }
+.form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--accent); outline: 2px solid var(--accent); outline-offset: 0; }
+.form-message { border-radius: 6px; }
+
+@media (min-width: 900px) {
+    .hero { padding-top: 4rem; }
+    .hero__media { order: 0; margin: 0; }
+    .hero__media img { border: 2px solid var(--ink); border-radius: 8px; }
+    .hero__media figcaption { padding: 0; }
+}
