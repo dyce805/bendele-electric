@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const otherPropertyInput = document.getElementById('otherProperty');
 
     // If URL parameter exists and is valid, prefill the select
-    if (propertyTypeParam && ['residential', 'commercial', 'industrial', 'other'].includes(propertyTypeParam)) {
+    if (propertyTypeParam && ['residential', 'commercial', 'industrial', 'agricultural', 'other'].includes(propertyTypeParam)) {
         propertyTypeSelect.value = propertyTypeParam;
         // Trigger change event in case 'other' is selected
         if (propertyTypeParam === 'other') {
@@ -281,7 +281,7 @@ document.addEventListener('DOMContentLoaded', function() {
             </svg>
             <div>
                 <strong>Thank you!</strong>
-                <p>Your quote request has been submitted successfully. We'll contact you within 72 hours.</p>
+                <p>Your quote request has been submitted successfully. We'll be in touch soon.</p>
             </div>
         `;
         form.parentNode.insertBefore(successDiv, form);

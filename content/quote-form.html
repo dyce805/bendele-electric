@@ -1,0 +1,114 @@
+<section class="quote-section">
+  <form class="quote-form" id="quoteForm" novalidate>
+    <fieldset class="form-set">
+      <legend class="form-set__legend">Your details</legend>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name" class="form-label">Full name <span class="form-required">*</span></label>
+          <input type="text" id="name" name="name" class="form-input" autocomplete="name" required>
+        </div>
+        <div class="form-group">
+          <label for="phone" class="form-label">Phone number <span class="form-required">*</span></label>
+          <input type="tel" id="phone" name="phone" class="form-input" autocomplete="tel" inputmode="tel" placeholder="(805) 555-0123" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="email" class="form-label">Email address <span class="form-required">*</span></label>
+          <input type="email" id="email" name="email" class="form-input" autocomplete="email" inputmode="email" required>
+        </div>
+        <div class="form-group">
+          <label for="contactMethod" class="form-label">Best way to reach you</label>
+          <select id="contactMethod" name="contactMethod" class="form-select">
+            <option value="phone">Phone call</option>
+            <option value="email">Email</option>
+            <option value="text">Text message</option>
+          </select>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset class="form-set">
+      <legend class="form-set__legend">The property</legend>
+      <div class="form-group">
+        <label for="serviceAddress" class="form-label">Service address <span class="form-required">*</span></label>
+        <input type="text" id="serviceAddress" name="serviceAddress" class="form-input" autocomplete="street-address" placeholder="123 Broadway, Santa Maria, CA 93454" required>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="propertyType" class="form-label">Property type <span class="form-required">*</span></label>
+          <select id="propertyType" name="propertyType" class="form-select" required>
+            <option value="" disabled selected>Select one</option>
+            <option value="residential">Residential</option>
+            <option value="commercial">Commercial</option>
+            <option value="industrial">Industrial</option>
+            <option value="agricultural">Agricultural</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-group" id="otherPropertyGroup" style="display: none;">
+          <label for="otherProperty" class="form-label">Describe the property <span class="form-required">*</span></label>
+          <input type="text" id="otherProperty" name="otherProperty" class="form-input" placeholder="Church, school, winery...">
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset class="form-set">
+      <legend class="form-set__legend">The job</legend>
+      <div class="form-group">
+        <label for="workType" class="form-label">Type of work needed <span class="form-required">*</span></label>
+        <input type="text" id="workType" name="workType" class="form-input" placeholder="Panel upgrade, new circuit, lighting repair..." required>
+      </div>
+      <div class="form-group">
+        <label for="projectDescription" class="form-label">Project description</label>
+        <textarea id="projectDescription" name="projectDescription" class="form-textarea" rows="4" placeholder="What is going on, what you want done, anything we should know before we come out."></textarea>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="urgency" class="form-label">How soon?</label>
+          <select id="urgency" name="urgency" class="form-select">
+            <option value="flexible">Flexible, no rush</option>
+            <option value="routine">Within a few weeks</option>
+            <option value="soon">Within a week</option>
+            <option value="urgent">As soon as possible</option>
+            <option value="emergency">Emergency</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="completionDate" class="form-label">Needed by</label>
+          <input type="date" id="completionDate" name="completionDate" class="form-input">
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset class="form-set">
+      <legend class="form-set__legend">Anything else</legend>
+      <div class="form-group">
+        <label for="howHeard" class="form-label">How did you hear about us?</label>
+        <select id="howHeard" name="howHeard" class="form-select">
+          <option value="" disabled selected>Select one</option>
+          <option value="google">Google search</option>
+          <option value="referral">Friend or family</option>
+          <option value="socialMedia">Social media</option>
+          <option value="driveBy">Saw one of our trucks</option>
+          <option value="repeat">Returning customer</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="additionalComments" class="form-label">Additional comments</label>
+        <textarea id="additionalComments" name="additionalComments" class="form-textarea" rows="3"></textarea>
+      </div>
+    </fieldset>
+
+    <div class="form-group hp" aria-hidden="true">
+      <label for="website">Website</label>
+      <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+    </div>
+
+    <div class="form-group form-group--submit">
+      <button type="submit" class="btn btn--quote btn--large">Send quote request</button>
+      <p class="form-disclaimer">Free estimate, no obligation.</p>
+    </div>
+  </form>
+</section>
