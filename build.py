@@ -201,9 +201,9 @@ def pic(name, sizes, eager=False, alt=None):
             f'alt="{alt or PHOTO_TEXT[name][1]}" {load}>')
 
 
-def figure(name, cls, sizes, eager=False, extra=""):
-    return (f'<figure class="{cls}">\n    {extra}{pic(name, sizes, eager)}\n'
-            f'    <figcaption>{PHOTO_TEXT[name][0]}</figcaption>\n  </figure>')
+def figure(name, cls, sizes, eager=False, extra="", caption=True):
+    cap = f'\n    <figcaption>{PHOTO_TEXT[name][0]}</figcaption>' if caption else ""
+    return f'<figure class="{cls}">\n    {extra}{pic(name, sizes, eager)}{cap}\n  </figure>'
 
 
 def ld(data):
@@ -416,6 +416,12 @@ def area_list():
     return '  <ul class="area__list">\n' + "\n".join(items) + "\n  </ul>"
 
 
+def service_links(exclude=None):
+    return ('  <div class="jobs jobs--3">\n' + "\n".join(
+        f'    <a href="{s["page"]}"><b>{s["title"]}</b><span>{s["lede"]}</span></a>'
+        for s in SERVICES if s is not exclude) + "\n  </div>")
+
+
 def jobs_grid():
     return ('  <div class="jobs">\n' + "\n".join(
         f'    <a href="{j["page"]}"><b>{j["name"]}</b><span>{j["blurb"]}</span></a>' for j in JOBS) + "\n  </div>")
@@ -491,11 +497,9 @@ def build_services():
     body = head("What we do", "Electrical Services <span>Santa Maria, CA</span>",
                 "Industrial, commercial and residential electrical work from one family-owned shop. Pick the kind of work below, or call and tell us what you need.",
                 trail=[("Services", "services.html")]) + f"""
-<section class="section services">
+<section class="section">
 {section_head("01", "Three kinds of work")}
-  <div class="services__grid">
-{service_cards()}
-  </div>
+{service_links()}
 </section>
 
 <section class="section">
@@ -526,7 +530,7 @@ def detail_page(d, kicker, list_title, trail, quote_type, name, related_html, pr
       <h2>{list_title}</h2>
       <ul class="ticks">{ticks}</ul>
     </div>
-    {figure(d["photo"], "split__media", "(min-width: 900px) 40vw, 100vw")}
+    {figure(d["photo"], "split__media", "(min-width: 900px) 40vw, 100vw", caption=False)}
   </div>
 </section>
 
@@ -546,7 +550,7 @@ def build_service_pages():
         others = [o for o in SERVICES if o is not s]
         links = [f'    <a href="{j["page"]}"><b>{j["name"]}</b><span>{j["blurb"]}</span></a>'
                  for j in JOBS if j["parent"] == s["key"]]
-        links += [f'    <a href="{o["page"]}"><b>{o["title"]} work</b><span>{o["card"]}</span></a>' for o in others]
+        links += [f'    <a href="{o["page"]}"><b>{o["title"]} work</b><span>{o["lede"]}</span></a>' for o in others]
         related = f"""<section class="section">
 {section_head("02", "Related work")}
   <div class="jobs">
@@ -561,7 +565,7 @@ def build_service_pages():
         parent = next(s for s in SERVICES if s["key"] == j["parent"])
         other = [o for o in JOBS if o is not j]
         links = [f'    <a href="{o["page"]}"><b>{o["name"]}</b><span>{o["blurb"]}</span></a>' for o in other]
-        links.append(f'    <a href="{parent["page"]}"><b>{parent["title"]} work</b><span>{parent["card"]}</span></a>')
+        links.append(f'    <a href="{parent["page"]}"><b>{parent["title"]} work</b><span>{parent["lede"]}</span></a>')
         related = f"""<section class="section">
 {section_head("02", "Related work")}
   <div class="jobs">
@@ -580,34 +584,21 @@ def build_area_pages():
         trail = [("Service Area", "index.html#area"), (town, a["page"])]
         paras = "\n".join(f"      <p>{p}</p>" for p in a["body"])
         ticks = "".join(f"<li>{x}</li>" for x in a["jobs"])
-        others = "\n".join(
-            ["    <li><a href=\"index.html\">Santa Maria</a></li>"] +
-            [f'    <li><a href="{o["page"]}">{o["town"]}</a></li>' for o in AREAS if o is not a])
         body = head("We work here", f"Electrician in <span>{town}, CA</span>", a["lede"], trail=trail) + f"""
 <section class="section">
   <div class="split">
     <div class="prose">
 {paras}
-      <p>Bendele Electric is a family-owned electrical contractor based in Santa Maria, licensed in California (C-10 #{LICENSE}) and in business for {YEARS} years. The same people who quote your job in {short} are the ones who come out and do it.</p>
       <h2>Common jobs in {short}</h2>
       <ul class="ticks">{ticks}</ul>
     </div>
-    {figure(a["photo"], "split__media", "(min-width: 900px) 40vw, 100vw")}
+    {figure(a["photo"], "split__media", "(min-width: 900px) 40vw, 100vw", caption=False)}
   </div>
 </section>
 
-<section class="section services">
+<section class="section">
 {section_head("01", "What we do", f"Industrial, commercial and residential work in {short}.")}
-  <div class="services__grid">
-{service_cards()}
-  </div>
-</section>
-
-<section class="section area">
-{section_head("02", "Also serving")}
-  <ul class="area__list">
-{others}
-  </ul>
+{service_links()}
 </section>
 
 {cta(title=f"Need an electrician in {short}?")}"""
@@ -624,30 +615,16 @@ def build_about():
                 f"A family-owned electrical contractor in Santa Maria, California, {YEARS} years in business.",
                 trail=[("About", "about.html")], actions=False) + f"""
 <section class="section">
-  <div class="split">
     <div class="prose">
       <h2>Our story</h2>
       <p>Anthony Bendele started Bendele Electric twenty years ago with a truck, a license and a simple idea: do the job right, charge a fair price, and answer the phone. It is still a family business, and it still runs that way.</p>
-      <p>Being a small shop is the point. There is no call center, no salesman and no handing your job to whoever is free. The people who look at your job and give you the price are the people who show up to do the work.</p>
       <p>Over the years the work has grown from house calls to plants, packing houses and commercial buildings across the Santa Maria Valley. We still do all three, and we bring the same habits to each.</p>
       <h2>How we work</h2>
       <ul>
-        <li><strong>To code, with a permit.</strong> Where a permit is required we pull it, and we meet the inspector ourselves.</li>
-        <li><strong>Neat on purpose.</strong> Straight conduit, labeled panels, and a site that is clean at the end of the day.</li>
         <li><strong>A price before we start.</strong> Free estimates, in writing, with no surprises on the invoice.</li>
         <li><strong>Dates we keep.</strong> If we tell you Tuesday, we mean Tuesday.</li>
       </ul>
     </div>
-    <div>
-      {figure("fleet", "split__media", "(min-width: 900px) 40vw, 100vw")}
-      <dl class="about__facts" style="margin-top: 2rem">
-        <div><dt>License</dt><dd>California C-10 #{LICENSE}</dd></div>
-        <div><dt>Coverage</dt><dd>Bonded and insured</dd></div>
-        <div><dt>In business</dt><dd>{YEARS} years</dd></div>
-        <div><dt>Based in</dt><dd>Santa Maria, CA</dd></div>
-      </dl>
-    </div>
-  </div>
 </section>
 
 <section class="section">
@@ -655,11 +632,6 @@ def build_about():
   <ul class="team">
 {team}
   </ul>
-</section>
-
-<section class="section area">
-{section_head("02", "Where we work", "Based in Santa Maria and on the road across northern Santa Barbara County and the Five Cities.")}
-{area_list()}
 </section>
 
 {cta(title="Ready to work with us?")}"""
@@ -705,11 +677,6 @@ def build_contact():
       </div>
     </article>
   </div>
-</section>
-
-<section class="section area">
-{section_head("01", "Where we work", "Based in Santa Maria and on the road across northern Santa Barbara County and the Five Cities.")}
-{area_list()}
 </section>
 
 {cta(title="Need a price on a job?", text="Send the details and we will get back to you with a free estimate.")}"""

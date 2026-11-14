@@ -281,7 +281,7 @@ document.addEventListener('DOMContentLoaded', function() {
             </svg>
             <div>
                 <strong>Thank you!</strong>
-                <p>Your quote request has been submitted successfully. We'll contact you within 72 hours.</p>
+                <p>Your quote request has been submitted successfully. We'll be in touch soon.</p>
             </div>
         `;
         form.parentNode.insertBefore(successDiv, form);

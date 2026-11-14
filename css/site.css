@@ -357,7 +357,7 @@ figcaption { display: inline-block; position: relative; margin: -1rem 0 0 .75rem
 
 @media (min-width: 900px) {
     .split { grid-template-columns: 1.25fr 1fr; gap: 3.5rem; align-items: start; }
-    .boxes--3 { grid-template-columns: repeat(3, 1fr); }
+    .boxes--3, .jobs--3 { grid-template-columns: repeat(3, 1fr); }
     .site-footer__inner { grid-template-columns: 1.3fr 1.1fr 1fr 1fr; gap: 2rem; }
     .nav__menu { gap: 1.25rem; }
 }
