@@ -1,0 +1,40 @@
+/* A. Brushed Silver: the straight swap to silver. Black bars, green accents. */
+:root {
+    --bg: #f4f5f6;            /* page */
+    --ink: #111;              /* body text */
+    --accent: #2f7a36;        /* brand green: number badges, ticks, links */
+    --edge: #111;             /* borders and hard shadows */
+    --edge-ink: #fff;         /* text on an edge-coloured tag (photo captions) */
+    --panel: #fff;            /* cards, facts box, footer */
+
+    --hero-bg: linear-gradient(120deg, #e4e7ea 0%, #c4c9cf 38%, #dde0e4 62%, #bcc1c8 100%);
+    --hero-ink: #111;
+    --hero-accent: #1c5423;   /* second line of the headline */
+    --hero-edge: #111;
+    --hero-edge-ink: #fff;
+    --kicker-bg: #111;
+    --kicker-ink: #e4e7ea;
+    --pill-bg: #fff;
+    --pill-ink: #111;
+    --stamp-bg: #2f7a36;
+    --stamp-ink: #fff;
+    --call-bg: #111;          /* big call button */
+    --call-ink: #e4e7ea;
+    --call-hover-bg: #2f7a36;
+
+    --bar-bg: #111;           /* top bar, card titles, form legends, closing band */
+    --bar-ink: #d9dde2;
+    --pop-bg: #c9cdd2;        /* nav quote button, card links */
+    --pop-ink: #111;
+    --callbar-bg: #2f7a36;    /* sticky call button on phones */
+    --callbar-ink: #fff;
+
+    --band-bg: #2f7a36;       /* "Where we work" band */
+    --band-ink: #fff;
+    --band-star: #d9dde2;
+    --band-num-bg: #d9dde2;
+    --band-num-ink: #111;
+
+    --cta-title: #d9dde2;
+    --cta-phone: #fff;
+}

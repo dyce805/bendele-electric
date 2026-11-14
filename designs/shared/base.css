@@ -63,6 +63,7 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.1; text-wrap: balance
 .hero__facts span { display: block; font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; opacity: .7; }
 .hero__media img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
 figcaption { font-size: .875rem; margin-top: .5rem; }
+.hero__stamp { display: none; } /* only the Trade Ad design shows it */
 
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: .4em; min-height: 3.25rem; padding: .6rem 1.4rem; font: inherit; font-weight: 700; text-decoration: none; cursor: pointer; border: 2px solid transparent; flex: 1 1 auto; }
 

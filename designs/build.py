@@ -17,6 +17,11 @@ LICENSE = "881830"
 TOWNS = ["Santa Maria", "Orcutt", "Guadalupe", "Nipomo", "Arroyo Grande",
          "Los Alamos", "Lompoc", "Santa Ynez Valley"]
 
+# The chosen design. Its style.css holds structure only; colours come from a palette.css.
+TRADE_AD = dict(fonts="family=Barlow+Condensed:wght@600;800&family=Barlow:wght@400;600",
+                kicker="Need an electrician?",
+                h1="Santa Maria&rsquo;s <span>Family Electrician</span>")
+
 DESIGNS = [
     dict(slug="1-truck-door", name="Truck Door",
          fonts="family=Marcellus&family=Source+Sans+3:wght@400;600;700",
@@ -30,15 +35,22 @@ DESIGNS = [
          fonts="family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Karla:wght@400;600",
          kicker="Family-owned on the Central Coast",
          h1="Your Santa Maria Valley electrician, <span>for over twenty years.</span>"),
-    dict(slug="4-trade-ad", name="Trade Ad",
-         fonts="family=Barlow+Condensed:wght@600;800&family=Barlow:wght@400;600",
-         kicker="Need an electrician?",
-         h1="Santa Maria&rsquo;s <span>Family Electrician</span>"),
+    dict(slug="4-trade-ad", name="Trade Ad", theme="#c9cdd2",
+         css=["style.css", "../4a-brushed-silver/palette.css"], **TRADE_AD),
     dict(slug="5-plain-spoken", name="Plain Spoken",
          fonts="family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=Schibsted+Grotesk:wght@400;600",
          kicker="Bendele Electric Inc.",
          h1="A family-owned electrician in <span>Santa Maria, California.</span>"),
 ]
+
+# Colour options for the Trade Ad. Each folder holds a hand-written palette.css.
+PALETTES = [("4a-brushed-silver", "Brushed Silver", "#c9cdd2"),
+            ("4b-black-chrome", "Black Chrome", "#141414"),
+            ("4c-green-field", "Green Field", "#2f7a36"),
+            ("4d-white-truck", "White Truck", "#ffffff")]
+DESIGNS += [dict(slug=slug, name=name, theme=theme,
+                 css=["../4-trade-ad/style.css", "palette.css"], **TRADE_AD)
+            for slug, name, theme in PALETTES]
 
 # name: (width, height) of the large file; the small one is half of 1600
 PHOTOS = {
@@ -104,7 +116,7 @@ HEAD = Template("""<!DOCTYPE html>
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Bendele Electric Inc.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#438548">
+<meta name="theme-color" content="$theme">
 <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicon_io/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon_io/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="../../assets/favicon_io/favicon-16x16.png">
@@ -112,7 +124,7 @@ HEAD = Template("""<!DOCTYPE html>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?$fonts&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../shared/base.css">
-<link rel="stylesheet" href="style.css">
+$styles
 $extra_head
 </head>
 <body class="page-$kind">
@@ -146,7 +158,7 @@ FOOT = Template("""</main>
   <div class="site-footer__inner">
     <div class="site-footer__brand">
       <p class="site-footer__name">Bendele Electric Inc.</p>
-      <p>Family-owned electrical contractor.<br>Industrial &middot; Commercial &middot; Residential</p>
+      <p>Family-owned electrical contractor.<br>20 years in business.<br>Industrial &middot; Commercial &middot; Residential</p>
       <p>California C-10 License #$license<br>Licensed, bonded and insured</p>
     </div>
     <address class="site-footer__contact">
@@ -183,12 +195,14 @@ HOME = Template("""<section class="hero">
       <a class="btn btn--quote" href="quote.html">Get a free quote</a>
     </div>
     <ul class="hero__facts">
+      <li><span>In business</span> 20 years</li>
       <li><span>License</span> C-10 #$license</li>
       <li><span>Owned by</span> The Bendele family</li>
       <li><span>Hours</span> Mon&ndash;Fri 7:00&ndash;3:30</li>
     </ul>
   </div>
   <figure class="hero__media">
+    <p class="hero__stamp"><b>20</b> <span>Years in</span> <span>Business</span></p>
     $hero_img
     <figcaption>One of our service trucks hauling the lift to a job.</figcaption>
   </figure>
@@ -235,13 +249,13 @@ $towns
   </header>
   <div class="about__body">
     <div class="about__text">
-      <p>Anthony Bendele started Bendele Electric more than twenty years ago, and it is still a family business. There are three of us. That means no call center, no salesman and no handing your job to whoever is free.</p>
+      <p>Anthony Bendele started Bendele Electric twenty years ago, and it is still a family business. There are three of us. That means no call center, no salesman and no handing your job to whoever is free.</p>
       <p>We do the work the way we would want it done at our own place: pulled permits, straight conduit, labeled panels and a clean site at the end of the day.</p>
       <dl class="about__facts">
         <div><dt>License</dt><dd>California C-10 #$license</dd></div>
         <div><dt>Coverage</dt><dd>Bonded and insured</dd></div>
         <div><dt>Crew</dt><dd>Three electricians</dd></div>
-        <div><dt>Hours</dt><dd>Mon&ndash;Fri, 7:00 AM&ndash;3:30 PM</dd></div>
+        <div><dt>In business</dt><dd>20 years</dd></div>
       </dl>
     </div>
     <figure class="about__media">
@@ -392,7 +406,7 @@ def schema():
         "telephone": PHONE,
         "faxNumber": "(805) 764-8636",
         "email": EMAIL,
-        "description": "Family-owned electrical contractor in Santa Maria, CA. Industrial, commercial and residential electrical work. California C-10 License #881830.",
+        "description": "Family-owned electrical contractor in Santa Maria, CA, in business for 20 years. Industrial, commercial and residential electrical work. California C-10 License #881830.",
         "address": {"@type": "PostalAddress", "postOfficeBoxNumber": "1845",
                     "addressLocality": "Santa Maria", "addressRegion": "CA",
                     "postalCode": "93456", "addressCountry": "US"},
@@ -431,9 +445,11 @@ def build():
     for d in DESIGNS:
         out = HERE / d["slug"]
         out.mkdir(exist_ok=True)
+        styles = "\n".join(f'<link rel="stylesheet" href="{c}">' for c in d.get("css", ["style.css"]))
+        common.update(styles=styles, theme=d.get("theme", "#438548"))
         home_title = "Electrician in Santa Maria, CA | Bendele Electric Inc. | Lic. #881830"
-        home_desc = ("Family-owned electrical contractor in Santa Maria, CA. Industrial, commercial and "
-                     "residential electricians serving Orcutt, Nipomo, Guadalupe and Lompoc. "
+        home_desc = ("Family-owned electrical contractor in Santa Maria, CA, 20 years in business. "
+                     "Industrial, commercial and residential electricians. "
                      "C-10 Lic. #881830. Call (805) 287-9044.")
         home = (HEAD.substitute(common, title=home_title, desc=home_desc, page="", kind="home",
                                 fonts=d["fonts"], home="",
