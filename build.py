@@ -16,7 +16,7 @@ NAME = "Bendele Electric Inc."
 PHONE = "(805) 287-9044"
 TEL = "+18052879044"
 FAX = "(805) 764-8636"
-EMAIL = "info@bendeleelectric.com"
+EMAIL = "anthony@bendeleelectric.com"
 LICENSE = "881830"
 YEARS = "20"
 HOURS = "Mon&ndash;Fri 7:00 AM&ndash;3:30 PM"
@@ -298,7 +298,7 @@ def page(file, title, desc, body, schemas=(), index=True, priority="0.6", curren
 </div>
 <header class="site-header">
   <nav class="nav" aria-label="Main">
-    <a href="index.html" class="nav__logo"><img src="assets/bendele-electric-logo.png" width="200" height="50" alt="{NAME}"></a>
+    <a href="index.html" class="nav__logo"><img src="assets/bendele-electric-logo.svg" width="182" height="36" alt="{NAME}"></a>
     <button class="nav__mobile-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation menu">
       <svg class="nav__mobile-icon" width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
     </button>
