@@ -4,7 +4,7 @@
  */
 
 // Initialize EmailJS
-emailjs.init('mzrX2T3SvfkbAxGZ6');
+emailjs.init('ukpc7qjMgkLReZXmC');
 
 // Wait for DOM to be ready
 document.addEventListener('DOMContentLoaded', function() {
